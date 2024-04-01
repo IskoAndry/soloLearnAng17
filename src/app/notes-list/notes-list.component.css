@@ -1,0 +1,14 @@
+
+
+.notes {
+  width: 50%;
+}
+
+.notes li {
+  width: 350px;
+  margin-bottom: 20px;
+  list-style: none;
+  padding: 20px;
+  background-color: rgb(196, 226, 252);
+  border-radius: 15px;
+}

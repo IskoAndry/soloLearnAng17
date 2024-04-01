@@ -1,0 +1,27 @@
+<p>form works!</p>
+
+
+
+<form action="" (ngSubmit)="showName()" #myForm="ngForm" name="formAng">
+    <label for="formAng">Name:
+        <br>
+        <input type="text" [(ngModel)]="name" name="name" required/>
+        <br>
+        <input type="text" [(ngModel)]="pass" required>
+        <br>
+        <button (click)="submit()" [disabled]="!myForm.form.valid">Отправить</button>
+    </label>
+    <input  type="submit" value="Submit" [disabled]="!myForm.form.valid">
+</form>
+
+
+<form (submit)="showForma()">
+    <input type="text" [formControl]="nameForm" name="name" />
+    <input  type="submit" value="Submit">
+</form>
+<p>{{nameForm.value}}</p>
+  
+
+
+   
+
