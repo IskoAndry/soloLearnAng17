@@ -2,7 +2,7 @@
 
 
 
-<form action="" (ngSubmit)="showName()" #myForm="ngForm" name="formAng">
+<!-- <form action="" (ngSubmit)="showName()" #myForm="ngForm" name="formAng">
     <label for="formAng">Name:
         <br>
         <input type="text" [(ngModel)]="name" name="name" required/>
@@ -12,7 +12,7 @@
         <button (click)="submit()" [disabled]="!myForm.form.valid">Отправить</button>
     </label>
     <input  type="submit" value="Submit" [disabled]="!myForm.form.valid">
-</form>
+</form> -->
 
 
 <form (submit)="showForma()">
@@ -20,8 +20,30 @@
     <input  type="submit" value="Submit">
 </form>
 <p>{{nameForm.value}}</p>
+
+<p>Username: {{ username }}</p>
+    <p>{{ username }}'s favorite framework: {{ favoriteFramework }}</p>
+    <label for="framework">
+        Favorite Framework:
+        <input id="framework" type="text" [(ngModel)]="favoriteFramework" />
+    </label>
   
+    <form [formGroup]="profileForm"
+    (ngSubmit)="handleSubmit()">
+        <label>
+          Name
+          <input type="text" formControlName="name" />
+        </label>
+        <br>
+        <label>
+          Email
+          <input type="email" formControlName="email" />
+        </label>
+        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+      </form>
 
-
+      <h2>Profile Form</h2>
+<p>Name: {{ profileForm.value.name }}</p>
+<p>Email: {{ profileForm.value.email }}</p>
    
 
