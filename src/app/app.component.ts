@@ -9,17 +9,27 @@ import { NotesListComponent } from './notes-list/notes-list.component';
 import { FormComponent } from './form/form.component';
 import { AddNoteComponent } from './add-note/add-note.component';
 import { LogoComponent } from './logo/logo.component';
+import {UpperCasePipe} from '@angular/common';
+import { LowerCasePipe } from '@angular/common';
 
+import {DecimalPipe, DatePipe, CurrencyPipe} from '@angular/common'
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterLink, LogoComponent, RouterModule, AddNoteComponent, FormComponent, RouterOutlet, HeaderComponent, TebleComponent, MenuComponent, NgFor, NotesListComponent],
+  imports: [DecimalPipe, DatePipe, CurrencyPipe, LowerCasePipe, UpperCasePipe, RouterLink, LogoComponent, RouterModule, AddNoteComponent, FormComponent, RouterOutlet, HeaderComponent, TebleComponent, MenuComponent, NgFor, NotesListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 
 export class AppComponent {
+
+  loudMessage = 'we think you are doing great!'
+
+  num = 103.1234;
+  birthday = new Date(2023, 3, 2);
+  cost = 4560.34;
+  date = new Date(2023, 3, 2);
   public arr: string[]=['a','b','c'];
 
   user = {
@@ -46,3 +56,4 @@ export class AppComponent {
  
 
 }
+
